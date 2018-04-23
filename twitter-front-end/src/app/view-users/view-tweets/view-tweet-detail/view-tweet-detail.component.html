@@ -1,0 +1,21 @@
+<a class="list-group-item clearfix">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="pull-left">
+        <a routerLink="/view/{{viewTweet.twitterName}}">
+          <h5 class="list-group-item-heading header-padding">{{viewTweet.displayName}} @{{viewTweet.twitterName}}</h5>
+        </a>
+      </div>
+      <div class="pull-left">
+        <h5 class="list-group-item-heading header-padding">
+          {{viewTweet.tweetDate | date:'MMM d y'}}
+        </h5>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <p>{{viewTweet.tweetMessage}}</p>
+    </div>
+  </div>
+</a>

@@ -1,0 +1,29 @@
+<a class="list-group-item clearfix">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="pull-left">
+        <a routerLink="/view/{{tweet.twitterName}}">
+          <h5 class="list-group-item-heading header-padding">{{tweet.displayName}} @{{tweet.twitterName}}</h5>
+        </a>
+      </div>
+      <div class="pull-left">
+        <h5 class="list-group-item-heading header-padding">
+          {{tweet.tweetDate | date:'MMM d y'}}
+        </h5>
+      </div>
+        <ul class="pull-right" *ngIf="tweet.twitterName == currentUser.twitterName">
+          <li class="dropdown list-unstyled" appDropdown>
+            <a style="cursor: pointer;" class="dropdown-toggle" role="button"><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a style="cursor: pointer;" (click)="onDeleteTweet(tweet.tweetId, [index])">Delete Tweet</a></li>
+            </ul>
+          </li>
+        </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <p>{{tweet.tweetMessage}}</p>
+    </div>
+  </div>
+</a>

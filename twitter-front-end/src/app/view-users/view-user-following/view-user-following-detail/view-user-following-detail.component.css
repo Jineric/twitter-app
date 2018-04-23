@@ -1,0 +1,13 @@
+#box {
+  height: 90px;
+  width: 180px;
+  padding: 10px;
+  border-style: solid;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.line {
+  width: 130px;
+  padding-left: 20px;
+}

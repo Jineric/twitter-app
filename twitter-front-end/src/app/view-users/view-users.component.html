@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-xs-3">
+    <div class="row">
+      <div class="col-xs-12">
+        <h3>{{viewUser.displayName}}</h3>
+        <h4>@{{viewUser.twitterName}}</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <ul class="list-inline">
+          <li>
+            <a style="cursor: pointer;" routerLink="/view/{{viewUser.twitterName}}">Tweets {{count}}</a>
+          </li>
+          <li>
+            <a style="cursor: pointer;" routerLink="/view/{{viewUser.twitterName}}/following">Following</a>
+          </li>
+          <li>
+            <a style="cursor: pointer;" routerLink="/view/{{viewUser.twitterName}}/followers">Followers</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-7">
+    <button type="button" class="btn btn-primary margin" *ngIf="!userIsFollowed && !viewingMainUser" (click)="onFollowUser()">Follow</button>
+    <button type="button" class="btn btn-primary margin" *ngIf="userIsFollowed && !viewingMainUser" (click)="onUnfollowUser()">Unfollow</button>
+    <button type="button" class="btn btn-primary margin" *ngIf="viewingMainUser" (click)="onEditProfile()">Edit Profile</button>
+
+    <router-outlet></router-outlet>
+  </div>
+  <div class="col-xs-2">
+    <app-who-to-follow></app-who-to-follow>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="row">
+  <div class="col-xs-12">
+    <p>Who to follow</p>
+    <ul class="list-unstyled">
+      <li *ngFor="let user of whoToFollow"><a routerLink="/view/{{user.twitterName}}">{{user.displayName}} @{{user.twitterName}}</a></li>
+    </ul>
+  </div>
+</div>

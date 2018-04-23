@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h3>{{user.displayName}}</h3>
+    <h4>@{{user.twitterName}}</h4>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <ul class="list-inline">
+      <li>
+        <a style="cursor: pointer;" routerLink="/view/{{user.twitterName}}">Tweets {{count}}</a>
+      </li>
+      <li>
+        <a style="cursor: pointer;" routerLink="/view/{{user.twitterName}}/following">Following</a>
+      </li>
+      <li>
+        <a style="cursor: pointer;" routerLink="/view/{{user.twitterName}}/followers">Followers</a>
+      </li>
+    </ul>
+  </div>
+</div>

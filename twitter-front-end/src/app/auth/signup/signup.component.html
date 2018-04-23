@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+    <form (ngSubmit)="onSignup(f)" #f="ngForm">
+      <div class="form-group">
+        <label for="displayName">Full Name</label>
+        <input type="displayName" id="displayName" name="displayName" ngModel class="form-control" required #displayName="ngModel"
+               placeholder="Your full name">
+        <span class="help-block" *ngIf="!displayName.valid && displayName.touched">This field is required</span>
+      </div>
+      <div class="form-group">
+        <label for="twitterName">Username</label>
+        <input type="twitterName" id="twitterName" name="twitterName" ngModel class="form-control"
+               required #twitterName="ngModel" [ngClass]="{existingUser: checkUsername()}" (ngModelChange)="onUsernameChange()">
+        <span class="help-block" *ngIf="!twitterName.valid && twitterName.touched">This field is required</span>
+        <span class="help-block" *ngIf="usernameExists">This username is taken</span>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" ngModel class="form-control" required email #email="ngModel">
+        <span class="help-block" *ngIf="!email.valid && email.touched">Input a valid email</span>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" ngModel class="form-control" required #password="ngModel" minlength="8">
+        <!--<span class="help-block" *ngIf="!password.minlength && password.touched">Password must be at least 8 characters in length</span>-->
+        <span class="help-block" *ngIf="!password.valid && password.touched">Input a valid password of at least 8 characters in length</span>
+      </div>
+      <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Sign Up</button>
+    </form>
+  </div>
+</div>

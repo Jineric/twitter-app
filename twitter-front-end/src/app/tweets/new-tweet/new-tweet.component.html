@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div>
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="message">Tweet Message</label>
+              <textarea type="text" id="message" class="form-control" rows="4" ngModel name="message" required></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Tweet</button>
+            <button type="button" class="btn btn-primary" (click)="onCancel(f)">Cancel</button>
+          </div>
+        </div>
+        <hr>
+      </form>
+    </div>
+  </div>
+</div>
