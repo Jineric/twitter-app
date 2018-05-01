@@ -17,3 +17,15 @@ The twitter front end requires `npm install` for node_module imports before runn
 3. Navigate to `http://localhost:4200/`
 4. Browser will automatically navigate to sign in page. Sign in using username `kenji` and password `secret123`
 5. Alternatively, create a new account by browsing to the sign up page
+
+# Application Features
+1. Create and delete users
+2. Login to existing users
+3. Post tweet messages
+4. Follow and unfollow other users
+
+## To Do List
+1. Add login errors when user submits incorrect information
+2. Retweet feature
+3. CSS to improve visuals
+4. Profile picture functionality
